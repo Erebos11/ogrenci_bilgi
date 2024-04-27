@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ogrenci_bilgi.Models.Yonetici>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Yöneticiler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yönetici", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiAd)*@
+            Yönetici Ad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiSoyad)*@
+            Yönetici Soyad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.YoneticiRol)*@
+            Yönetici Rol
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YoneticiRol)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.YoneticiId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.YoneticiId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.YoneticiId }, new { @class = "btn btn-success" })
+        </td>
+    </tr>
+}
+
+</table>

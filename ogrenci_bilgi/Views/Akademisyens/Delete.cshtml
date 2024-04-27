@@ -1,0 +1,48 @@
+﻿@model ogrenci_bilgi.Models.Akademisyen
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Akademisyen Sil</h2>
+
+
+<div>
+    <h4>Akademisyen</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdBolum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Akedemisyenler sayfasına dön", "Index")
+        </div>
+    }
+</div>

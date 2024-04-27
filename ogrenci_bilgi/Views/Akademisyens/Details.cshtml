@@ -1,0 +1,42 @@
+﻿@model ogrenci_bilgi.Models.Akademisyen
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Akademisyen</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AkdBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AkdBolum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AkdId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ogrenci_bilgi.Models.Mezunlar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mezunlar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Mezun", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MezunAd)*@
+            Mezun Ad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MezunSoyad)*@
+            Mezun Soyad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MezunBolum)*@
+            Mezun Bölüm
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MezunAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MezunSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MezunBolum)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.MezunId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.MezunId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.MezunId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

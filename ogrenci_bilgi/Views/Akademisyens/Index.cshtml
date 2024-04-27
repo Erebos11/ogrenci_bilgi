@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ogrenci_bilgi.Models.Akademisyen>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Akademisyenler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Akademisyen", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.AkdAd)*@
+            Akademisyen Ad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.AkdSoyad)*@
+            Akademisyen Soyad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.AkdBolum)*@
+            Akademisyen Bölüm
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AkdAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AkdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AkdBolum)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.AkdId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.AkdId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.AkdId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

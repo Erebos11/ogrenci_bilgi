@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ogrenci_bilgi.Models.Ogrenci>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğrenci Bilgi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.OgrAd)*@
+            Öğrenci Adı
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.OgrSoyad)*@
+            Öğrenci Soyad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.OgrBolum)*@
+            Öğrenci Bölüm
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.OgrNo)*@
+            Öğrenci No
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.OgrKredi)*@
+            Öğrenci Kredi
+
+
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrBolum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrKredi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OgrId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.OgrId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.OgrId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

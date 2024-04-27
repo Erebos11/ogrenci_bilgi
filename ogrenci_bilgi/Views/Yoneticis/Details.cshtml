@@ -1,0 +1,42 @@
+﻿@model ogrenci_bilgi.Models.Yonetici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Yonetici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.YoneticiAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YoneticiAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YoneticiSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YoneticiSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YoneticiRol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YoneticiRol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.YoneticiId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

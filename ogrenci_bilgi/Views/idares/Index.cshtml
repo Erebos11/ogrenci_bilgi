@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ogrenci_bilgi.Models.idare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>İdare</h2>
+
+<p>
+    @Html.ActionLink("Yeni İdari Personel", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.IdariBirimAd)*@
+            İdari Birim Adı
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.IdariAd)*@
+            İdari personel Ad, Soyad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdariBirimAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdariAd)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.IdariId }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.IdariId }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.IdariId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

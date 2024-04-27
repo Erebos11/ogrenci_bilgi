@@ -1,0 +1,65 @@
+﻿@model ogrenci_bilgi.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Öğrenci Bilgi Sil</h2>
+
+
+<div>
+    <h4>Ogrenci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.OgrAd)*@
+            Öğrenci Ad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrBolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrKredi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrKredi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Öğrenci bilgi sayfasına geri dön", "Index")
+        </div>
+    }
+</div>

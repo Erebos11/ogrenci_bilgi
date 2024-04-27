@@ -1,0 +1,48 @@
+﻿@model ogrenci_bilgi.Models.Mezunlar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Mezun Öğrenci Sil</h2>
+
+
+<div>
+    <h4>Mezunlar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MezunAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MezunAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MezunSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MezunSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MezunBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MezunBolum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Mezunlar sayfasına geri dön", "Index")
+        </div>
+    }
+</div>

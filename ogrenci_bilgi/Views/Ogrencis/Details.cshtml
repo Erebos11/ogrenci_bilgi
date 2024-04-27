@@ -1,0 +1,58 @@
+﻿@model ogrenci_bilgi.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ogrenci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrBolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrBolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrKredi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrKredi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OgrId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
